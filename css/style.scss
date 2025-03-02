@@ -1,0 +1,765 @@
+
+// colors
+
+$black: #1C1C1C;
+$yellow: #F1DB25;
+$white: #F7F7F7;
+$body-color: #FFFFFF;
+
+
+// font sizes
+
+$body-f-size: 16px;
+$heading-size: 2rem;
+$quotes-f-size: 18px;
+$banner-h1:2.3rem;
+
+
+
+// font weights
+$body-fw:400;
+$heading-fw:800;
+$h2-fw:600;
+
+
+// padding
+$container-padding: 0.5rem;
+
+
+
+
+// buttons
+
+// btn-padding
+     $btn-padding: 1.3em 5px;
+// btn-fw
+  $btn-fw: 600;
+// btn-hover
+
+$btn-bg: transparent;
+$btn-hover-c: $yellow;
+
+// mixins
+@mixin flexbag{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+// resetors
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+
+}
+
+a{
+    text-decoration: none;
+    color: $white;
+}
+
+body{
+    font-family: poppins sans-serif;
+    overflow-x: hidden;
+}
+
+
+// banner
+
+.banner{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+width: 100%;
+height: 100vh;
+background-image: url(images/hero-bg.jpg);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+padding: auto 30px;
+
+// header
+header{
+    width: 100%;
+    .header-c-det{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: $black;
+        height: 8vh;
+        padding: 0 10px;
+
+        .h-c-det{
+            display: flex;
+            gap: 5px;
+        }
+
+        p{
+            color: $white;
+        }
+    }
+
+        // navbar
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.127);
+            height: 10vh;
+            width: 100%;
+            padding: 20px;
+
+            .nav-branding{
+                font-size: 2rem;
+                font-weight: $heading-fw;
+            }
+
+            .nav-menu{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 50%;
+                padding: 20px;
+                margin-left: 120px;
+
+
+
+                .nav-item{
+                    margin: 10px;
+
+                    .nav-link{
+                        color: $white;
+                        font-size: 1.3rem;
+                        font-weight: $btn-fw;
+                        transition: all 0.5s ease;
+                    }
+
+                    .nav-link:hover{
+                       background-color: $black;
+                       padding: 10px;
+                    }
+                }
+          
+            }
+
+            .hamburger{
+                display: block;
+                cursor: pointer;
+                
+                
+                
+                
+
+
+                span{
+                    display: block;
+                    width: 25px;
+                    height: 5px;
+                    background-color: $white;
+                    margin: 5px auto;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+}
+
+
+// banner content
+
+.owl-carousel{
+    width: 50%;
+    height: 60vh;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 7rem;
+
+    h4{
+        font-size: 5rem;
+        color: $yellow;
+        font-weight: $heading-fw;
+        margin-bottom: 20px;
+    }
+
+    .banner-q{
+        font-size: $quotes-f-size;
+        font-style: italic;
+        margin-bottom: 40px;
+        color: $white;
+    }
+
+}
+
+
+// buttons
+
+
+.banner-btns{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .banner-btn-1{
+        width: 150px;
+        height: 50px;
+        background-color: $white;
+        color: $black;
+        padding: $btn-padding;
+        font-weight: $btn-fw;
+        font-size: 1em;
+        margin-right: 30px;
+        border: none;
+        transition: all 0.5s ease-in;
+        cursor: pointer;
+        
+    }
+
+
+    .banner-btn-1:hover{
+        background-color: transparent;
+        color: $white;
+    }
+
+
+    .banner-btn-2{
+        width: 150px;
+        height: 50px;
+        background-color: $yellow;
+        color: $white;
+        padding: $btn-padding;
+        font-weight: $btn-fw;
+        font-size: 1em;
+        border: none;
+        transition: all 0.5s ease-in;
+        cursor: pointer;
+    }
+
+
+    .banner-btn-2:hover{
+        background-color: transparent;
+        color: $white;
+    }
+
+}
+
+
+
+}
+
+
+
+.about{
+    display: flex;
+    padding: 30px 1.5em;
+
+    width: 100%;
+    min-height: 450px;
+    flex-wrap: wrap;
+   
+
+    .about-img{
+        max-width: 600px;
+        border-radius: 8px;
+        img{
+            object-fit: cover;
+            object-position: center;
+          width: 100%;
+        }
+    }
+    
+
+    .about-text{
+        align-self: center;
+         margin-left: -70px;
+        min-height: auto;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 300px;
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 999;
+
+        h3{
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+            font-weight: $heading-fw;
+        }
+    }
+}
+
+
+// services 
+
+.services-container{
+    min-height: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $black;
+
+    .service-h3{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        
+
+        h3{
+            font-size: 1.7rem;
+            color: $yellow;
+        }
+
+        span{
+            background-color: $yellow;
+            width: 60px;
+            border-radius: 20px;
+            height: 8px;
+
+        }
+    }
+
+
+    .services-cards{
+      
+        display: flex;
+        min-height: 450px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        flex-wrap: wrap;
+
+
+        .card{
+            margin: 20px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            max-width: 450px;
+            height: 100%;
+            flex-direction: column;
+            padding: 2rem 20px;
+            background-color: $white;
+
+        .svg-h{
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+
+
+        }
+
+        h4{
+            color: $black;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: $h2-fw;
+        }
+        p{
+            color: $black;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            background-color: $yellow;
+            color: $white;
+            font-size: 1rem;
+            font-weight: $btn-fw;
+            border: none;
+            cursor: pointer;
+            transition: 0.5s ease-in;
+        }
+
+        button:hover{
+            color: $yellow;
+            background-color: transparent;
+        }
+
+    }
+
+    }
+
+
+}
+
+// client reviews section
+
+
+.client-reveiw{
+    background-color: $white;
+    width: 100%;
+    display: block;
+    min-height: 450px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20%;
+
+    .client-h{
+        margin-top: 30px;
+        background-color: transparent;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
+
+        h2{
+            font-size: 2rem;
+        }
+
+        .deco{
+            width: 60px;
+            height: 8px;
+            background-color: $yellow;
+            border-radius: 20px;
+        }
+
+    }
+
+    .owl-carousel2{
+       width: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        margin-top: 3rem;
+        .item{
+            width: 100%;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+           
+
+            .client-img{
+                align-self: center;
+                justify-self: center;
+                width: 200px;
+               min-height: 200px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .client-text{
+                h4{
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+                justify-self: center;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                p{
+                    text-wrap: wrap;
+                }
+            }
+        }
+
+        
+    }
+}
+
+// contact section
+
+.contact-container{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 550px;
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px;
+
+    .contact-h{
+        
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h4{
+            font-size: 2.5rem;
+            color: $white;
+        }
+
+        .con-s{
+            background-color: $yellow;
+            width: 60px;
+            border-radius: 20px;
+            height: 8px;
+            z-index: 2;
+            align-self: center;
+            
+        }
+    }
+
+
+    .contact-det{
+        padding-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            height: 400px;
+
+            input{
+                width: 100%;
+                height: 50px;
+                margin-bottom: 10px;
+                border: none;
+                color: $black;
+                padding-left: 20px;
+            }
+
+            .message{
+                width: 100%;
+                height: 120px;
+            }
+
+            button{
+                width: 150px;
+                height: 50px;
+                color: $white;
+               background-color: $yellow;
+                border: none;
+                
+            }
+        }
+    }
+}
+
+
+// our team section
+
+.our-team{
+    width: 100%;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    
+
+    .our-team-h{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: auto 10px;
+
+        h3{
+            color: $black;
+            font-size: 2rem;
+            margin: 0px auto;
+           
+        }
+
+        .deco{
+            background-color: $yellow;
+            height: 10px;
+            width: 60px;
+            border-radius: 20px;
+
+        }
+
+        p{
+            width: 60%;
+            margin-top: 10px;
+        }
+
+
+    }
+
+    // the team
+    
+    .the-team{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      
+        margin: auto 2rem;
+        flex-wrap: wrap;
+
+        .supervisor{
+            width: 300px;
+            height: 300px;
+            background-position: center;
+            background-size: cover;
+            margin: 20px;
+          
+            padding-top: 14.5rem;
+
+
+            .guard-det{
+                display: flex;
+                flex-direction: column;
+                text-align: center bottom;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.798);
+                height: 70px;
+
+
+                span{
+                    color: white;
+                    font-size: 1.2rem;
+                    margin-top: 10px;
+                }
+
+            }
+        }
+
+
+    }
+
+    button{
+        width: 10em;
+        height: 3em;
+        color: white;
+        background-color: $yellow;
+        border: none;
+        font-weight: $btn-fw;
+        transition: 3s;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: transparent;
+        color: $yellow;
+    }
+
+
+}
+
+
+
+
+// footer
+
+footer{
+
+    background-color: $black;
+    text-align: center;
+    .footer-container{
+        width: 100%;
+        min-height: 450px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        padding-top: 5rem;
+        flex-wrap: wrap;
+
+        .foot-detail{
+            
+            width: 300px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 20px;
+            padding-left: 20px;
+           
+            text-align: left;
+
+                h3{
+                    color: $white;
+                    font-size: 2rem;
+                }
+            
+                p{
+                    color: $white;
+                }
+
+                .email{
+                    width: 200px;
+                    height: 40px;
+                    border: none;
+                    border-radius: 20px;
+                    padding-left: 10px;
+                    font-weight: $btn-fw;
+                }
+
+
+                .ft-btn{
+                    width: 150px;
+                    height: 45px;
+                    border-radius: 20px;
+                    border: none;
+                    background-color: $yellow;
+                    color: $white;
+                    font-size: 1em;
+                    cursor: pointer;
+
+                }
+                
+                
+                
+
+        }
+
+
+    }
+
+    p{
+        color: $white;
+        
+    }
+}
